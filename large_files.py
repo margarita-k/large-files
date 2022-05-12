@@ -53,8 +53,9 @@ for result in cursor.execute('SELECT * FROM large_files'):
 num = -1
 while num != 0:
     num = int(input("Please select the best option:\n0: exit\n1: search in path\n2: search in size\n>>"))
+	
     if num == 1:
-        query = input('Please enter a SQL search query to look in path (or "exit" if you want to quit): ')
+        query = input('Please enter a SQL search query to look in path: ')
         for result in cursor.execute(f'SELECT id, path, bytes FROM large_files WHERE path LIKE "{query}"'):
             print(result)
 
